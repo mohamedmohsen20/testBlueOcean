@@ -21,6 +21,12 @@ pipeline {
           }
         }
 
+        stage('TEST2') {
+          steps {
+            echo 'tets 2'
+          }
+        }
+
       }
     }
 
