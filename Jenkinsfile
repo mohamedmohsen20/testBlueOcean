@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        echo 'build completed'
+        echo 'build done'
       }
     }
 
@@ -11,28 +11,34 @@ pipeline {
       parallel {
         stage('test') {
           steps {
-            sh 'echo "test"'
+            echo 'test'
           }
         }
 
         stage('test1') {
           steps {
-            echo 'running test 1'
+            echo 'teste1'
           }
         }
 
-        stage('TEST2') {
+        stage('test2') {
           steps {
-            echo 'tets 2'
+            echo 'test2'
+          }
+        }
+
+        stage('test3') {
+          steps {
+            echo 'test3'
           }
         }
 
       }
     }
 
-    stage('deploy') {
+    stage('depley') {
       steps {
-        echo 'deploy has finshed'
+        echo 'deploy'
       }
     }
 
