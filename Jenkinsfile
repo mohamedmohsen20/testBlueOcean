@@ -1,46 +1,11 @@
-pipeline {
+pipeline{ 
   agent any
-  stages {
-    stage('build') {
+  stages{
+    stage('git checkout'){
       steps {
-        echo 'build done'
+        #add git repo to checkout 
+        git 'https://github.com/mohamedmohsen20/netty-example.git'
       }
     }
-
-    stage('test') {
-      parallel {
-        stage('test') {
-          steps {
-            echo 'test'
-          }
-        }
-
-        stage('test1') {
-          steps {
-            echo 'teste1'
-          }
-        }
-
-        stage('test2') {
-          steps {
-            echo 'test2'
-          }
-        }
-
-        stage('test3') {
-          steps {
-            echo 'test3'
-          }
-        }
-
-      }
-    }
-
-    stage('depley') {
-      steps {
-        echo 'deploy'
-      }
-    }
-
   }
 }
